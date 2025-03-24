@@ -1,15 +1,24 @@
-<h5 class="text-success mt-3">Agregar nuevo producto</h5>
-    <form class="d-flex justify-content-between align-items-center my-4 w-50 mx-auto"
-        (submit)="agregarProducto($event)" >
-        <input type="text" id="descripcion" name="descripcion" 
-        placeholder="Descricion del producto" class="form-control mw-2 w75"
-        [(ngModel)]="descripcionInput"/>
+<h5 class="text-success mt-3 text-center">Detalle producto</h5>
 
-        <input type="number" id="precio" name="precio" 
-        placeholder="Precio del producto" class="form-control mw-2 w75"
-        [(ngModel)]="precioInput"/>
+    <form class="my-4 w-50 mx-auto"
+        #f="ngForm" (submit)="f.form.valid && guardarProducto($event)" >
+        <div class="d-flex justify-content-between align-items-center">
+            <input type="text" id="descripcion" name="descripcion" 
+            placeholder="Descricion del producto" class="form-control mw-2 w75"
+            [(ngModel)]="descripcionInput"
+            required/>
+    
+            <input type="number" id="precio" name="precio" 
+            placeholder="Precio del producto" class="form-control mw-2 w75"
+            [(ngModel)]="precioInput"
+            required
+            />
+        </div>
 
+        <div class="d-flex justify-content-center mt-3">
+            <button type="submit" class="btn btn-primary">Guardar producto</button>
+            <button type="button" class="btn btn-danger mx-3" (click)="cancelar()">Cancelar</button>
+        </div>
 
-        <button type="submit" class="btn btn-primary">Agregar</button>
 
     </form>
