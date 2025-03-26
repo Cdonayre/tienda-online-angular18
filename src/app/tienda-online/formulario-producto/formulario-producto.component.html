@@ -5,6 +5,7 @@
         <div class="d-flex justify-content-between align-items-center">
             <input type="text" id="descripcion" name="descripcion" 
             placeholder="Descricion del producto" class="form-control mw-2 w75"
+            autocomplete="off"
             [(ngModel)]="descripcionInput"
             required/>
     
@@ -17,6 +18,9 @@
 
         <div class="d-flex justify-content-center mt-3">
             <button type="submit" class="btn btn-primary">Guardar producto</button>
+            @if (llaveProducto !== null) {
+                <button type="button" class="btn btn-warning mx-3" (click)="eliminarProducto()">Eliminar</button>
+            }
             <button type="button" class="btn btn-danger mx-3" (click)="cancelar()">Cancelar</button>
         </div>
 

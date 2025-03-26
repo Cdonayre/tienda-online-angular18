@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CalculadoraComponent } from "./calculadora/calculadora.component";
-import { ListadoProductosComponent } from "./tienda-online/listado-productos/listado-productos.component";
+import ListadoProductosComponent from './tienda-online/listado-productos/listado-productos.component';
+
 
 @Component({
   selector: 'app-root',

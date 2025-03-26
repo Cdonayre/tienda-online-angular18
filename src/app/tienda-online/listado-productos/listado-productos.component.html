@@ -5,9 +5,9 @@
         <button class="btn btn-primary my-5" (click)="agregarProducto()">Agreagr producto</button>
 
     </div>
-    <ul class="lits-group w-50 mx-auto">
-         @for (productoElemento of productos; track productoElemento) {
-            <app-producto [producto]="productoElemento" />
+    <ul class="list-group w-50 mx-auto">
+         @for (llave of obtenerLlaves(); track llave) {
+            <app-producto [producto]="productos[llave]" [llave]="llave" />
          }
     </ul>
 </div>
